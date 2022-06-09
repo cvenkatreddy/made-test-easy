@@ -1,0 +1,33 @@
+{
+  "name": "automation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "cy:run": "cypress run",
+    "cy:open": "cypress open",
+    "cy:run:record": "cypress run --record --key 3b2f45bc-d004-4b8a-a052-ba7f861412ea",
+    "cy:run:login": "npx cypress run --spec \"cypress/integration/evernote/login_spec.js\"",
+    "cy:run:notes": "npx cypress run --spec \"cypress/integration/evernote/notes_spec.js\"",
+    "cleanup": "rm -fr mochawesome-report",
+    "merge_reports": "mochawesome-merge --reportDir mochawesome-report > mochawesome-report/output.json",
+    "generate_mochawesome_report": "marge mochawesome-report/output.json",
+    "e2e_mochawesome": "npm run cleanup; cypress run; npm run merge_reports; npm run generate_mochawesome_report",
+    "test:allure-report": "cypress run -r mocha-allure-reporter",
+    "generate-allure-report": "allure generate allure-results --clean -o allure-report && allure open allure-report",
+    "clear": "npm run test:allure-report; npm run generate-allure-report"
+  },
+  "author": "Venkatreddy",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^9.6.1",
+    "cypress-iframe": "^1.0.1",
+    "mocha": "^10.0.0",
+    "mocha-allure-reporter": "^1.4.0",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.2.1"
+  },
+  "description": "",
+  "dependencies": {
+    "uuid": "^8.3.2"
+  }
+}
