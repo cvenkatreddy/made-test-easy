@@ -14,7 +14,7 @@
     "e2e_mochawesome": "npm run cleanup; cypress run; npm run merge_reports; npm run generate_mochawesome_report",
     "test:allure-report": "cypress run -r mocha-allure-reporter",
     "generate-allure-report": "allure generate allure-results --clean -o allure-report && allure open allure-report",
-    "clear": "npm run test:allure-report; npm run generate-allure-report"
+    "e2e_allure": "npm run test:allure-report; npm run generate-allure-report"
   },
   "author": "Venkatreddy",
   "license": "ISC",
