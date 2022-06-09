@@ -4,6 +4,7 @@
   "defaultCommandTimeout": 10000,
   "pageLoadTimeout": 60000,
   "projectId": "ytqaz3",
+  "video": false,
   "reporter": "mochawesome",
   "reporterOptions": {
     "html": false,
