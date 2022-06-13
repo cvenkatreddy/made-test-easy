@@ -6,8 +6,7 @@ on:
       - '**.md'
   push:
     branches:
-      - main
-      - releases/*
+      - master
     paths-ignore:
       - '**.md'
 
@@ -24,7 +23,6 @@ jobs:
         with:
           node-version: 16.x
           cache: npm
-      - run: npm ci
-      - run: npm run build
-      - run: npm run format-check
+      - run: rm -rf package-lock.json && ./node_modules
+      - run: npm install
       - run: npm cy:run
